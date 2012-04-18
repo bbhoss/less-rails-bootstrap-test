@@ -34,8 +34,15 @@
 @import "twitter/bootstrap/hero-unit";
 @import "twitter/bootstrap/badges";
 @import "twitter/bootstrap/utilities";
+// Some customizations to something else utilizing bootstrap
+@import "full_control/custom"
 
 #foo {
   color: @linkColor;
   .myButton(10px);
+}
+
+//Works fine if you remove the custom import/file. Just removing the import doesn't help as rails is still compiling everything separately. I think this is a symptom of the issue.
+#foo {
+  #gradient > .vertical(rgb(0,0,0),rgb(255,255,255))
 }
